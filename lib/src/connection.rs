@@ -388,9 +388,9 @@ impl ConnectionInfo {
         let mut url = NeoUrl::parse(uri)?;
 
         let (routing, encryption, validation) = match url.scheme() {
-            "bolt" | "" => (true, false, false),
-            "bolt+s" => (true, true, true),
-            "bolt+ssc" => (true, true, false),
+            "bolt" | "" => (false, false, false),
+            "bolt+s" => (false, true, true),
+            "bolt+ssc" => (false, true, false),
             "neo4j" => (true, false, false),
             "neo4j+s" => (true, true, true),
             "neo4j+ssc" => (true, true, false),
