@@ -87,6 +87,7 @@ impl Graph {
                     pool,
                 })
             } else {
+                debug!("Routing not enabled, creating a routed connection manager");
                 let pool = Direct(create_pool(&config)?);
                 Ok(Graph {
                     config: config.into_live_config(),
